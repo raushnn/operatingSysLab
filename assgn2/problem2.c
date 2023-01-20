@@ -23,10 +23,8 @@ int main(int argc, char *argv[]){
                 execvp(argv[i], NULL);
                 ++i;
             }
-            printf("%d", getpid());
         }
         wait(NULL);
-
     }
     return 0;
 }
