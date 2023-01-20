@@ -1,3 +1,7 @@
+/*
+* @author Raushan k. Singh (raushan026@gmail.com)
+* @task Pass command line argument to executable 
+*/
 #include <stdio.h>
 #include <sys/types.h>
 #include <unistd.h>
