@@ -25,8 +25,6 @@ int main(int argc, char *argv[]){
             data=  (int *)shmat(shmid, NULL, 0);
             int val= *data;
             int k=2;
-            
-            int ans=0;
             while (val)
             {
                 int count=0;
@@ -38,17 +36,15 @@ int main(int argc, char *argv[]){
                     }
                     if(count==0){
                         val--;
-                        ans= k;
+                        *data= k;
                     }
                     k+=1;
             }
-            
-            printf("The %dth prime number is %d\n",*data, ans);
             shmdt(data);
             exit(EXIT_SUCCESS);
         }
         wait(NULL);
-        // printf("%d\n", r);
+        printf("the %dth prime number is %d\n", r, *data);
         n--;
     }
     wait(NULL);
