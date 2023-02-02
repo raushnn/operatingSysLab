@@ -9,15 +9,53 @@
 #include <sys/shm.h> //for shmget(), shmctl()
 #include <errno.h> //for perror
 
+#define ROWS 5
+#define COLS 3
+#define ROWS2 3
+#define COLS2 5
+
+
 int main(int argc, char *argv[]){
     int shmid;
-    int rows = 10;
-    int column=10;
-    shmid= shmget(IPC_PRIVATE, sizeof(int[rows][column]), 0666 | IPC_CREAT);
-    int (*array)[column]= (int(*)[column]) shmat(shmid, NULL, 0);
-    
-    if (fork()==0){
+    int mat1[ROWS][COLS] = {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9},
+        {10, 11, 12},
+        {13, 14, 15}
+    };
+    int mat2[ROWS2][COLS2] = {
+        {16, 17, 18, 19, 20},
+        {21, 22, 23, 24, 25},
+        {26, 27, 28, 29, 30}
+    };
 
+    shmid= shmget(IPC_PRIVATE, sizeof(int[ROWS][COLS]), 0666 | IPC_CREAT);
+    int (*array)[COLS2]= (int(*)[COLS2]) shmat(shmid, NULL, 0);
+
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLS2; j++) {
+            if (fork()==0){
+                // printf("I'm the child_%d which is calculating multiplication for index array[%d][%d]\n",getpid(), i, j);
+                array[i][j] = 0;
+                for (int k = 0; k < ROWS2; k++) {
+                    array[i][j] += mat1[i][k] * mat2[k][j];
+                    }
+                // printf("%d\n", array[i][j]);
+                shmdt(array);
+                exit(EXIT_SUCCESS);
+            }
+        }
+        }
+    
+    wait(NULL);
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLS2; j++) {
+            printf("%d ", array[i][j]);
+        }
+        printf("\n");
     }
+    shmctl(shmid, IPC_RMID, NULL);
+
     return 0;
 }
