@@ -1,0 +1,11 @@
+In general, semaphore(s) can be used to achieve synchronization of execution among different sections of codes scattered over multiples processes.
+
+Under the present assignment, five  programs (small ones), say, p1.c, p2.c, p3.c, p4.c, and p5.c have to be written which will be compiled into 5 executable files, say, p1.out, p2.out, p3.out, p4.out,  and p5.out, respectively. These five programs have to be run independently at five different terminals. by 5 processes p1, p2, p3, p4, and p5, respectively.
+
+As shown in the following figure, all other programs other than p2.c (that is, pi.c, where i = 1,3,4,5)  are supposed to print the messages "I am pi!\n", i = 1,3,4,5 in infinite loops. p2.c, however, has 2 sections, where the 1st section prints "I am p2 section 1!\n " and the 2nd section prints "I am p2 section 2!\n". These 2 sections of p2.c, together, are kept within a single  infinite loop. Synchronization of execution of different sections of  these 5 programs has to be achieved so that the messages are printed in the order as shown in the figure.
+
+After printing each message, a process may sleep for some time or  wait for a key-press (to be read by getchar()) so that their output can be analysed to validate that  their sequences are indeed as specified above.
+
+Before termination the program(s) should make arrangement for releasing all inter-process communication (IPC) tools those have been created during their execution.
+
+As enhancement of your program (not to be submitted today) you may try to support the following in your program.

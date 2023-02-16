@@ -30,6 +30,7 @@ int main(int argc, char *argv[]){
         {26, 27, 28, 29, 30}
     };
 
+    //0666 means read and write permission for owner group and others
     shmid= shmget(IPC_PRIVATE, sizeof(int[ROWS][COLS]), 0666 | IPC_CREAT);
     int (*array)[COLS2]= (int(*)[COLS2]) shmat(shmid, NULL, 0);
 
@@ -47,15 +48,22 @@ int main(int argc, char *argv[]){
             }
         }
         }
+    //wait returns -1 one possible error can be when calling process has no children which is indicated by errno ECHILD
+    while (1){
+        if (wait(NULL)==-1){
+            if (errno==ECHILD){
+                break;
+            }
+        }
+    }
     
-    wait(NULL);
     for (int i = 0; i < ROWS; i++) {
         for (int j = 0; j < COLS2; j++) {
             printf("%d ", array[i][j]);
         }
         printf("\n");
     }
-    shmctl(shmid, IPC_RMID, NULL);
+    // shmctl(shmid, IPC_RMID, NULL);
 
     return 0;
 }

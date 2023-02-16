@@ -11,6 +11,7 @@
 
 int main(int argc, char *argv[]){
     int shmid;
+    //0666 means read and write permission to owner groups and others
     shmid= shmget(IPC_PRIVATE, sizeof(int), 0666 | IPC_CREAT);
     int *data= (int *)shmat(shmid, NULL, 0);
     int n= atoi(argv[1]);
