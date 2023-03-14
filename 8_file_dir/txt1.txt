@@ -1,0 +1,37 @@
+drwx------ 16 nobody  nogroup           4096 Aug 27  2015  ab
+-rwxr-xr-x  1 prachi  btech2020        12856 Feb 24 18:14  a.out
+drwx------ 15 arpanm  arpanm            4096 Jan 17 15:30  ashishlayek
+-rw-r--r--  1 root    root               510 Feb  8 13:42  bak.sh
+drwxr-xr-x  4 nobody  nogroup           4096 Sep 27  2007  dhruba
+drwxr-xr-x  3 root    root              4096 Mar 27  2016  eprints
+drwx------ 23 nobody  nogroup           4096 Jun 21  2017  faculty
+-rw-r--r--  1 prachi  btech2020         1446 Feb 24 18:14  file.c
+drwxr-xr-x  6 joyh    joyh              4096 Feb 24  2017  hadoop
+drwxr-xr-x  4 tonmay  btech2021         4096 Nov 28 14:11 '#include<stdio.h>'
+drwx------  2    1013      1013         4096 Feb 15 13:59  jayanta
+drwx------  2 root    root             16384 Aug  3  2015  lost+found
+drwx------  3 csthps  csthps            4096 Jul 25  2018  manashira
+drwx------  3 csthps  csthps            4096 Jul 25  2018  manashira.complete
+drwx------  3 root    root              4096 Jan 25  2017  mhdesktop
+drwx------  3 csthps  csthps            4096 Dec 23  2016  mhdesktop.old
+drwxrwxr-x  2    3929      3929         4096 Jan 23 14:44  nfsshare
+drwx------  5 nobody  nogroup           4096 Aug 27  2015  pluto1
+drwx------  6 nobody  nogroup           4096 Aug 27  2015  project
+drwxr-xr-x  3 nobody  nogroup           4096 Oct 20  2006  research
+drwxr-xr-x 17 root    root              4096 Aug  9  2019  research_scholar
+drwx------  5 nobody  nogroup           4096 Aug 27  2015  samya
+drwx------  4 nobody  nogroup           4096 Aug 27  2015  samya3
+drwx------  5 nobody  nogroup           4096 Aug 27  2015  samya4
+drwx------  6 nobody  nogroup           4096 Aug 27  2015  samya6
+drwxr-xr-x  4 cstphds cstphds           4096 Aug 12  2016  sarbanibarari
+drwxr-xr-x  3 nobody  nogroup           4096 Mar  7  2012  scholar
+drwxr-xr-x  3 gdm     nogroup           4096 Nov  6  2019  shutdown
+drwx------  2 nirnayg nirnayg           4096 Jan 24 16:16  sriparna
+drwxr-xr-x 17 nobody  nogroup           4096 Aug 28  2015  staff
+drwxr-xr-x  8 root    root              4096 Feb  3 11:54  student
+drwxr-xr-x  7    3929      3929         4096 Feb 10 13:16  sumitrabagchi
+drwxr-xr-x  4 csthps  csthps            4096 Mar 29  2016  vibgyor.iiests.ac.in
+-rw-r--r--  1 root    root      183397406720 Feb  7 17:58  z
+
+
+

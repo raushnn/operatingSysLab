@@ -56,7 +56,7 @@ int main(){
         P(semid); //Checking weather the first semaphore is free or not
         sleep(6);
         printf("I am p1\n");
-        V(semid2); //freeing the second semaphore
+        // V(semid2); //freeing the second semaphore
 
     }
     semctl(semid, 0, IPC_RMID, 0);

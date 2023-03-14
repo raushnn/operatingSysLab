@@ -37,7 +37,7 @@ int main()
     semid2 = semget(key_for_p2, 1, IPC_CREAT | 0666);
 
     while (1) {
-
+        
         P(semid5);
         sleep(6);
         printf("I am p5 \n");
